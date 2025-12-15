@@ -2,9 +2,11 @@ NavAI: LLM-Guided Navigation for Virtual Reality
 
 NavAI is a generalizable Large Language Model (LLM)–based framework for automating navigation in immersive Virtual Reality (VR) environments. Unlike prior approaches designed for 360° images or 3D simulators, NavAI operates directly on unseen VR scenes and supports both basic movement commands and complex, goal-driven navigation through natural language.
 
+
 Overview
 
 NavAI bridges human intent, visual scene understanding, and low-level VR controls using LLM-based reasoning. The framework interprets screenshots from the user’s field of view, classifies navigation intent, and executes actions through a structured control interface. It is designed to generalize across diverse VR environments without environment-specific training.
+
 
 Architecture
 
@@ -44,6 +46,7 @@ look_down
 
 scan_360
 
+
 Evaluation
 
 NavAI was evaluated in three Unity VR environments: Highway, Country House, and Ship.
@@ -58,16 +61,7 @@ Exploratory scans completed in ~41 seconds on average
 
 Results show strong generalization and accuracy, with latency primarily driven by LLM-based scene interpretation.
 
+
 Limitations and Future Work
 
 Current limitations include high interpretation latency and inconsistent stopping conditions during exploratory tasks. Future work will focus on reducing latency through lightweight local models, parallel decision voting, and improved context management.
-
-Tech Stack
-
-Unity Simulator
-
-Python
-
-Large Language Models (GPT-4o, Grok-2, Gemini 2.5 Flash)
-
-LLM function calling for control execution
