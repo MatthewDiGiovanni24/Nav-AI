@@ -72,6 +72,19 @@ The primary performance bottleneck was LLM-based scene interpretation latency.
 
 ---
 
+## Tech Stack
+
+- **Unity Simulator** – VR environment execution and testing  
+- **Python** – Control logic, orchestration, and evaluation  
+- **Large Language Models**
+  - GPT-4o
+  - Grok-2
+  - Gemini 2.5 Flash  
+- **LLM Function Calling** – Structured mapping from intent to control actions  
+- **Multi-Agent LLM Orchestration** – Decision voting and goal evaluation  
+
+---
+
 ## Impact
 
 This project demonstrates:
