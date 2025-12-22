@@ -1,67 +1,89 @@
-NavAI: LLM-Guided Navigation for Virtual Reality
+# NavAI
 
-NavAI is a generalizable Large Language Model (LLM)–based framework for automating navigation in immersive Virtual Reality (VR) environments. Unlike prior approaches designed for 360° images or 3D simulators, NavAI operates directly on unseen VR scenes and supports both basic movement commands and complex, goal-driven navigation through natural language.
+---
 
+## Introduction
 
-Overview
+NavAI is a Large Language Model (LLM)–guided framework designed to automate navigation in immersive Virtual Reality (VR) environments. Existing navigation approaches largely focus on 360° image datasets or traditional 3D simulators, which do not translate well to fully immersive VR. This project explores how LLMs can bridge natural language intent, visual scene understanding, and low-level control to support generalizable navigation across unseen VR environments.
 
-NavAI bridges human intent, visual scene understanding, and low-level VR controls using LLM-based reasoning. The framework interprets screenshots from the user’s field of view, classifies navigation intent, and executes actions through a structured control interface. It is designed to generalize across diverse VR environments without environment-specific training.
+NavAI was developed as a research project to evaluate the feasibility, performance, and limitations of LLM-driven navigation in VR.
 
+---
 
-Architecture
+## Specifications
 
-NavAI consists of four core components:
+- **Generalizable VR Navigation Framework**: Operates across diverse Unity VR environments without environment-specific training.
+- **Natural Language Interface**: Supports both basic motion commands and complex goal-driven navigation.
+- **LLM-Based Scene Interpretation**: Uses visual and textual reasoning to understand the user’s field of view.
+- **Multi-Agent Decision Voting**: Improves robustness by aggregating decisions from multiple LLMs.
+- **Structured Control Mapping**: Translates high-level intent into executable VR control actions.
 
-Comprehensive Interpreter
-Generates textual and spatial interpretations of VR scenes from screenshots.
+---
 
-Navigation Category Classifier
-Classifies user queries into semantic queries, explicit actions, or goal-oriented navigation.
+## Navigation Framework
 
-Decision Voter
-Uses multiple LLM agents to determine goal progress and guide next actions.
+NavAI follows a four-stage pipeline:
 
-Decision-to-Control Mapping
-Translates high-level decisions into executable VR control functions.
+1. **Comprehensive Interpreter**  
+   Captures screenshots from the VR environment and generates textual descriptions and spatial interpretations using an LLM.
 
-Supported Actions
+2. **Navigation Category Classification**  
+   Classifies user input into semantic queries, explicit action commands, or goal-oriented navigation tasks.
 
-Movement
+3. **Decision Voter**  
+   Uses multiple LLM agents to determine whether a navigation goal has been reached or requires further action.
 
-move_forward
+4. **Decision-to-Control Mapping**  
+   Maps navigation decisions to predefined VR control functions and executes them in the simulator.
 
-move_left
+---
 
-move_right
+## Supported Actions
 
-Stability / View
+**Movement Actions**
+- move_forward  
+- move_left  
+- move_right  
 
-in_place_rotate_to_left
+**Stability / View Actions**
+- in_place_rotate_to_left  
+- in_place_rotate_to_right  
+- look_up  
+- look_down  
+- scan_360  
 
-in_place_rotate_to_right
+---
 
-look_up
+## Evaluation
 
-look_down
+NavAI was evaluated across three Unity VR environments:
 
-scan_360
+- Highway (outdoor, dynamic obstacles)
+- Country House (indoor, multi-room)
+- Ship (confined space)
 
+Results:
+- 100% success on basic action commands (21/21)
+- 89% success rate on direct goal-oriented navigation
+- Average action overhead of approximately 0.74 seconds
+- Exploratory scans completed in approximately 41 seconds on average
 
-Evaluation
+The primary performance bottleneck was LLM-based scene interpretation latency.
 
-NavAI was evaluated in three Unity VR environments: Highway, Country House, and Ship.
+---
 
-100% success on basic action commands (21/21)
+## Impact
 
-89% success rate on direct goal-oriented navigation (16/18)
+This project demonstrates:
+- The feasibility of LLM-guided navigation in immersive VR
+- Strong generalization across unseen environments
+- Practical limitations of current LLMs in real-time embodied tasks
+- Design tradeoffs between reasoning accuracy and system latency
 
-Average action overhead: ~0.74 seconds
+NavAI provides a foundation for future work in VR automation, accessibility, and intelligent virtual assistants.
 
-Exploratory scans completed in ~41 seconds on average
+---
 
-Results show strong generalization and accuracy, with latency primarily driven by LLM-based scene interpretation.
+## Conclusion
 
-
-Limitations and Future Work
-
-Current limitations include high interpretation latency and inconsistent stopping conditions during exploratory tasks. Future work will focus on reducing latency through lightweight local models, parallel decision voting, and improved context management.
+NavAI highlights both the potential and current constraints of using large language models for embodied navigation. While the system achieves high accuracy and generalization, further optimization is required for real-time use. The project contributes insights into LLM orchestration, multimodal reasoning, and human-centered AI system design.
