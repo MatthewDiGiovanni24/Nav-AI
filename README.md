@@ -8,6 +8,7 @@ NavAI is a Large Language Model (LLM)–guided framework designed to automate na
 
 NavAI was developed as a research project to evaluate the feasibility, performance, and limitations of LLM-driven navigation in VR.
 
+![poster](/images/poster.png)
 ---
 
 ## Specifications
